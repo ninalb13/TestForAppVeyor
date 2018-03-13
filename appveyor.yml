@@ -1,0 +1,18 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+configuration:
+- Debug
+- Release
+build:
+  verbosity: minimal
+before_package:
+- ps: Copy-Item C:\projects\TestForAppVeyor\$env:CONFIGURATION\Motor2D.exe C:\projects\TestForAppVeyor\xml\Game\.
+artifacts:
+- path: xml\Game
+  name: game_files
+  type: WebDeployPackage
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: tJLK8SCbOPmNe0+2V05qtCnj7+pOPjA1+WvUIU/2XTIYXSBOrqXEqKzJUSwcURfLRdDH9nbE5XcBJnOJ8KANnFMLAcONjSa/43ZJ+ZzkLp8=
+  draft: true
