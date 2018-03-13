@@ -7,10 +7,6 @@ build:
   verbosity: minimal
 before_package:
 - ps: Copy-Item C:\projects\TestForAppVeyor\$env:CONFIGURATION\Motor2D.exe C:\projects\TestForAppVeyor\xml\Game\.
-artifacts:
-- path: xml\Game
-  name: game_files
-  type: WebDeployPackage
 deploy:
 - provider: GitHub
   auth_token:
