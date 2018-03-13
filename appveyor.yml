@@ -15,4 +15,5 @@ deploy:
 - provider: GitHub
   auth_token:
     secure: tJLK8SCbOPmNe0+2V05qtCnj7+pOPjA1+WvUIU/2XTIYXSBOrqXEqKzJUSwcURfLRdDH9nbE5XcBJnOJ8KANnFMLAcONjSa/43ZJ+ZzkLp8=
+  artifact: game_files
   draft: true
